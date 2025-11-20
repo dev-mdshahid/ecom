@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, Menu } from "lucide-react";
+import { ShoppingCart, Menu, Home, Package, Info, Mail, Sparkles } from "lucide-react";
 import { useState } from "react";
 import {
     Sheet,
@@ -10,17 +10,19 @@ import {
     SheetTrigger,
     SheetHeader,
     SheetTitle,
+    SheetDescription,
 } from "@/components/ui/sheet";
+import { Separator } from "@/components/ui/separator";
 
 export function Header() {
     const [isOpen, setIsOpen] = useState(false);
 
     const navigation = [
-        { name: "Home", href: "/" },
-        { name: "Shop", href: "#products" },
-        { name: "How It Works", href: "#how-it-works" },
-        { name: "About", href: "/about" },
-        { name: "Contact", href: "/contact" },
+        { name: "Home", href: "/", icon: Home },
+        { name: "Shop", href: "#products", icon: Package },
+        { name: "How It Works", href: "#how-it-works", icon: Sparkles },
+        { name: "About", href: "/about", icon: Info },
+        { name: "Contact", href: "/contact", icon: Mail },
     ];
 
     return (
@@ -72,22 +74,67 @@ export function Header() {
                                     <span className="sr-only">Toggle menu</span>
                                 </Button>
                             </SheetTrigger>
-                            <SheetContent side="right" className="w-64">
-                                <SheetHeader>
-                                    <SheetTitle>Menu</SheetTitle>
-                                </SheetHeader>
-                                <nav className="flex flex-col space-y-4 mt-8">
-                                    {navigation.map((item) => (
-                                        <Link
-                                            key={item.name}
-                                            href={item.href}
-                                            onClick={() => setIsOpen(false)}
-                                            className="text-base font-medium text-[var(--foreground)] hover:text-[var(--primary)] transition-colors"
-                                        >
-                                            {item.name}
-                                        </Link>
-                                    ))}
+                            <SheetContent side="right" className="w-80 p-0 flex flex-col">
+                                {/* Header with gradient */}
+                                <div className="bg-gradient-to-br from-[var(--primary)] to-[var(--accent-foreground)] p-6 pb-8">
+                                    <SheetHeader>
+                                        <div className="flex items-center space-x-3 mb-2">
+                                            <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center shadow-lg">
+                                                <span className="text-white font-bold text-2xl">B</span>
+                                            </div>
+                                            <div>
+                                                <SheetTitle className="text-white text-xl font-bold">BabyNest</SheetTitle>
+                                                <SheetDescription className="text-white/80 text-sm">
+                                                    Safe & Trusted Baby Care
+                                                </SheetDescription>
+                                            </div>
+                                        </div>
+                                    </SheetHeader>
+                                </div>
+
+                                {/* Navigation Links */}
+                                <nav className="flex-1 px-4 py-6 overflow-y-auto">
+                                    <div className="space-y-2">
+                                        {navigation.map((item, index) => {
+                                            const Icon = item.icon;
+                                            return (
+                                                <div key={item.name}>
+                                                    <Link
+                                                        href={item.href}
+                                                        onClick={() => setIsOpen(false)}
+                                                        className="flex items-center space-x-4 px-4 py-3.5 rounded-lg text-[var(--foreground)] hover:bg-[var(--muted)] hover:text-[var(--primary)] transition-all duration-200 group"
+                                                    >
+                                                        <div className="w-10 h-10 rounded-lg bg-[var(--muted)] flex items-center justify-center group-hover:bg-[var(--primary)] group-hover:text-white transition-all duration-200">
+                                                            <Icon className="w-5 h-5" />
+                                                        </div>
+                                                        <span className="text-base font-medium">{item.name}</span>
+                                                    </Link>
+                                                    {index < navigation.length - 1 && (
+                                                        <Separator className="my-2" />
+                                                    )}
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
                                 </nav>
+
+                                {/* Footer Section */}
+                                <div className="border-t border-[var(--border)] p-6 bg-[var(--muted)]/30">
+                                    <div className="space-y-3">
+                                        <Button
+                                            asChild
+                                            className="w-full bg-[var(--primary)] hover:bg-[var(--primary)]/90 text-white"
+                                        >
+                                            <Link href="/cart">
+                                                <ShoppingCart className="w-4 h-4 mr-2" />
+                                                View Cart
+                                            </Link>
+                                        </Button>
+                                        <p className="text-xs text-center text-[var(--muted-foreground)]">
+                                            Trusted by thousands of parents
+                                        </p>
+                                    </div>
+                                </div>
                             </SheetContent>
                         </Sheet>
                     </div>

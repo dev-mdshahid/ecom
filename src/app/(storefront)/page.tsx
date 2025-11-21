@@ -38,20 +38,17 @@ export const metadata: Metadata = {
 
 export default function LandingPage() {
     return (
-        <div className="flex flex-col min-h-screen">
-            <Header />
-            <main>
-                <HeroSection />
-                <ProductShowcase />
-                <WhyChooseUs />
-                <HowItWorks />
-                <Testimonials />
-                <StatsBanner />
-                <FAQSection />
-                <CTASection />
-            </main>
-            <Footer />
-        </div>
+        <main className="flex flex-col min-h-screen">
+            <HeroSection />
+            <ProductShowcase />
+            <WhyChooseUs />
+            <HowItWorks />
+            <Testimonials />
+            <StatsBanner />
+            <FAQSection />
+            <CTASection />
+        </main>
+
     );
 }
 

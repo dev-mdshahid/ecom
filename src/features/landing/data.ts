@@ -1,4 +1,4 @@
-import { TProduct, TTestimonial, TFeature, TFAQ, TStat, TTrustBar } from "./types";
+import { TProduct, TTestimonial, TFeature, TFAQ, TStat, TTrustBar, THowToUseSection } from "./types";
 
 // Global trust bar data that can be used across products
 export const defaultTrustBar: TTrustBar = {
@@ -9,6 +9,96 @@ export const defaultTrustBar: TTrustBar = {
         { icon: "ShieldCheck", text: "CLINICALLY TESTED & CERTIFIED" },
         { icon: "Heart", text: "LOVED BY 50,000+ PARENTS" },
         { icon: "Sparkles", text: "PREMIUM QUALITY MATERIALS" },
+    ],
+};
+
+// Default How To Use Section for Relief Koala
+const koalaHowToUse: THowToUseSection = {
+    sectionTitle: "How to Use",
+    sectionSubtitle: "3 Minutes. 3 Times a Week. 3 Simple Steps to Feel Your Best.",
+    tagline: "Simple & Effective",
+    steps: [
+        {
+            stepNumber: 1,
+            title: "Get Cozy & Comfortable",
+            description: "Find your favorite spot, whether it's your bed, couch, or comfy chair. Hold your Relief Koala close and let its soft, plush body melt your stress away.",
+            icon: "Sofa",
+            highlight: "Instant Comfort",
+        },
+        {
+            stepNumber: 2,
+            title: "Activate & Relax",
+            description: "Press the button to start the gentle breathing simulation and soothing heartbeat sounds. Feel your body naturally sync with the calming rhythm.",
+            icon: "Power",
+            highlight: "Sync & Breathe",
+        },
+        {
+            stepNumber: 3,
+            title: "Feel the Transformation",
+            description: "Within minutes, experience deeper relaxation, reduced anxiety, and improved sleep quality. Wake up refreshed and ready to take on the day!",
+            icon: "Sparkles",
+            highlight: "Results You Feel",
+        },
+    ],
+};
+
+// How To Use Section for Nasal Aspirator
+const nasalAspiratorHowToUse: THowToUseSection = {
+    sectionTitle: "How to Use",
+    sectionSubtitle: "Safe, Gentle Relief in Under 60 Seconds",
+    tagline: "Doctor Recommended",
+    steps: [
+        {
+            stepNumber: 1,
+            title: "Prep & Position",
+            description: "Select the appropriate soft silicone tip for your baby's age. Gently position baby in a comfortable, slightly reclined position.",
+            icon: "Baby",
+            highlight: "Safe Start",
+        },
+        {
+            stepNumber: 2,
+            title: "Gentle Suction",
+            description: "Place the tip at the nostril entrance—never inside. Choose your suction level and gently clear congestion with controlled, safe suction power.",
+            icon: "Wind",
+            highlight: "Controlled Power",
+        },
+        {
+            stepNumber: 3,
+            title: "Clean & Store",
+            description: "Disassemble and rinse all parts after use. Store in the included case to keep it hygienic and ready for next time.",
+            icon: "Droplets",
+            highlight: "Hygienic",
+        },
+    ],
+};
+
+// How To Use Section for Nail Grinder
+const nailGrinderHowToUse: THowToUseSection = {
+    sectionTitle: "How to Use",
+    sectionSubtitle: "Trim Tiny Nails Safely While Baby Sleeps Peacefully",
+    tagline: "Whisper Quiet",
+    steps: [
+        {
+            stepNumber: 1,
+            title: "Choose Your Pad",
+            description: "Select the age-appropriate grinding pad from the 6 included options. Newborn, infant, or toddler—we've got the perfect fit.",
+            icon: "Settings",
+            highlight: "Perfect Fit",
+        },
+        {
+            stepNumber: 2,
+            title: "Illuminate & Position",
+            description: "Turn on the built-in LED light for clear visibility. Gently hold baby's finger and position the grinder at a safe angle.",
+            icon: "Lightbulb",
+            highlight: "See Clearly",
+        },
+        {
+            stepNumber: 3,
+            title: "File with Care",
+            description: "Use gentle, circular motions to file nails smooth. The whisper-quiet motor won't disturb even the lightest sleeper!",
+            icon: "Heart",
+            highlight: "Stress-Free",
+        },
     ],
 };
 
@@ -118,6 +208,7 @@ export const products: TProduct[] = [
             "Emotional comfort when you need it. Its comforting presence and soft, huggable body will give you the emotional support you need.",
             "Restful & Anxiety Free Sleep. The soft nightlight and soothing sounds will create the perfect environment for a peaceful night's sleep.",
         ],
+        howToUseSection: koalaHowToUse,
         guaranteeInfo: [
             "30-day money back guarantee - no questions asked",
             "2-year warranty coverage on all defects",
@@ -228,6 +319,7 @@ export const products: TProduct[] = [
             "Gently suction to clear congestion",
             "Clean thoroughly after each use",
         ],
+        howToUseSection: nasalAspiratorHowToUse,
         guaranteeInfo: ["30-day money back guarantee"],
         reviews: [],
         paymentMethods: ["visa", "mastercard"],
@@ -322,6 +414,7 @@ export const products: TProduct[] = [
             "Turn on LED light",
             "Gently file baby's nails while they sleep",
         ],
+        howToUseSection: nailGrinderHowToUse,
         guaranteeInfo: ["30-day money back guarantee"],
         reviews: [],
         paymentMethods: ["visa", "mastercard"],

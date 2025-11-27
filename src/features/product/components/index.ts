@@ -7,3 +7,4 @@ export { StickyAddToCart } from "./sticky-add-to-cart";
 export { ProductFeaturesSpotlight } from "./product-features-spotlight";
 export { ProductComparison } from "./product-comparison";
 export { TrustBar } from "./trust-bar";
+export { ProductHowToUse } from "./product-how-to-use";

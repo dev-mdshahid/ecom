@@ -11,6 +11,7 @@ import {
     ProductFeaturesSpotlight,
     ProductComparison,
     TrustBar,
+    ProductHowToUse,
 } from "@/features/product/components";
 
 type TProductPageProps = {
@@ -116,6 +117,17 @@ export default async function ProductPage({ params }: TProductPageProps) {
                 {product.trustBar && (
                     <TrustBar trustBar={product.trustBar} />
                 )}
+
+                {/* How To Use Section */}
+                {product.howToUseSection && (
+                    <div className="bg-gradient-to-b from-[var(--background)] via-[var(--secondary)]/5 to-[var(--background)]">
+                        <ProductHowToUse
+                            howToUse={product.howToUseSection}
+                            productName={product.name}
+                        />
+                    </div>
+                )}
+
 
                 <div className="container mx-auto px-4">
                     <div className="max-w-7xl mx-auto">

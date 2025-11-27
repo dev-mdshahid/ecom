@@ -78,6 +78,7 @@ export type TProduct = {
     featureDetails: TProductFeatureDetail[];
     spotlightFeatures: TSpotlightFeature[];
     howItWorks: string[];
+    howToUseSection?: THowToUseSection;
     guaranteeInfo: string[];
     reviews: TProductReview[];
     paymentMethods: string[];
@@ -113,4 +114,21 @@ export type TStat = {
     value: string;
     label: string;
     icon: string;
+};
+
+// How to Use Section Types
+export type THowToUseStep = {
+    stepNumber: number;
+    title: string;
+    description: string;
+    image?: string;
+    icon?: string;
+    highlight?: string;
+};
+
+export type THowToUseSection = {
+    sectionTitle: string;
+    sectionSubtitle: string;
+    tagline?: string;
+    steps: THowToUseStep[];
 };

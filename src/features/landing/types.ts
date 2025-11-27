@@ -49,6 +49,15 @@ export type TProductComparison = {
     features: TComparisonFeature[];
 };
 
+export type TTrustBarItem = {
+    icon: string; // Lucide icon name (PascalCase)
+    text: string;
+};
+
+export type TTrustBar = {
+    items: TTrustBarItem[];
+};
+
 export type TProduct = {
     id: string;
     name: string;
@@ -74,6 +83,7 @@ export type TProduct = {
     paymentMethods: string[];
     trustBadges: { icon: string; text: string }[];
     comparison?: TProductComparison;
+    trustBar?: TTrustBar;
 };
 
 export type TTestimonial = {

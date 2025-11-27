@@ -1,4 +1,16 @@
-import { TProduct, TTestimonial, TFeature, TFAQ, TStat } from "./types";
+import { TProduct, TTestimonial, TFeature, TFAQ, TStat, TTrustBar } from "./types";
+
+// Global trust bar data that can be used across products
+export const defaultTrustBar: TTrustBar = {
+    items: [
+        { icon: "FlaskConical", text: "SCIENCE-BACKED & NON-INVASIVE" },
+        { icon: "Award", text: "PATENTED & INNOVATIVE TECHNOLOGIES" },
+        { icon: "Trophy", text: "27x AWARD-WINNING PRODUCTS" },
+        { icon: "ShieldCheck", text: "CLINICALLY TESTED & CERTIFIED" },
+        { icon: "Heart", text: "LOVED BY 50,000+ PARENTS" },
+        { icon: "Sparkles", text: "PREMIUM QUALITY MATERIALS" },
+    ],
+};
 
 export const products: TProduct[] = [
     {
@@ -147,6 +159,7 @@ export const products: TProduct[] = [
                 { label: "Money Back Guarantee", ourValue: "60 days", competitorValue: "30 days" },
             ],
         },
+        trustBar: defaultTrustBar,
     },
     {
         id: "2",
@@ -240,6 +253,7 @@ export const products: TProduct[] = [
                 { label: "Money Back Guarantee", ourValue: "30 days", competitorValue: "14 days" },
             ],
         },
+        trustBar: defaultTrustBar,
     },
     {
         id: "3",
@@ -333,6 +347,7 @@ export const products: TProduct[] = [
                 { label: "Money Back Guarantee", ourValue: "30 days", competitorValue: "14 days" },
             ],
         },
+        trustBar: defaultTrustBar,
     },
 ];
 

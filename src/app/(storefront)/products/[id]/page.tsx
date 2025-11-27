@@ -10,6 +10,7 @@ import {
     StickyAddToCart,
     ProductFeaturesSpotlight,
     ProductComparison,
+    TrustBar,
 } from "@/features/product/components";
 
 type TProductPageProps = {
@@ -103,6 +104,11 @@ export default async function ProductPage({ params }: TProductPageProps) {
                         productName={product.name}
                     />
                 </div>
+
+                {/* Trust Bar - Scrolling Banner */}
+                {product.trustBar && (
+                    <TrustBar trustBar={product.trustBar} />
+                )}
 
                 {/* Product Comparison Section */}
                 {product.comparison && (

@@ -81,6 +81,9 @@ export default async function ProductPage({ params }: TProductPageProps) {
 
                                 {/* Add to Cart Section */}
                                 <AddToCartSection
+                                    productId={product.id}
+                                    productName={product.name}
+                                    productImage={product.image}
                                     selectedBundle={product.bundles[0]}
                                     shippingCountry={product.shippingCountry}
                                     paymentMethods={product.paymentMethods}
@@ -139,9 +142,12 @@ export default async function ProductPage({ params }: TProductPageProps) {
 
             {/* Sticky Add to Cart (Mobile Only) */}
             <StickyAddToCart
+                productId={product.id}
                 productName={product.name}
-                price={product.price}
+                price={product.bundles[0].discountedPrice}
                 image={product.image}
+                bundleId={product.bundles[0].id}
+                bundleLabel={product.bundles[0].label}
             />
         </>
     );

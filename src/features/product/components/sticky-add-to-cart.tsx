@@ -4,15 +4,27 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart } from "lucide-react";
 import Image from "next/image";
+import { useCart } from "@/features/cart/store";
 
 type TStickyAddToCartProps = {
+    productId: string;
     productName: string;
     price: number;
     image: string;
+    bundleId: string;
+    bundleLabel: string;
 };
 
-export function StickyAddToCart({ productName, price, image }: TStickyAddToCartProps) {
+export function StickyAddToCart({
+    productId,
+    productName,
+    price,
+    image,
+    bundleId,
+    bundleLabel
+}: TStickyAddToCartProps) {
     const [isVisible, setIsVisible] = useState(false);
+    const { addItem, openDrawer } = useCart();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -23,6 +35,18 @@ export function StickyAddToCart({ productName, price, image }: TStickyAddToCartP
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    const handleAddToCart = () => {
+        addItem({
+            productId,
+            productName,
+            bundleId,
+            bundleLabel,
+            price,
+            image,
+        });
+        openDrawer();
+    };
 
     if (!isVisible) return null;
 
@@ -48,6 +72,7 @@ export function StickyAddToCart({ productName, price, image }: TStickyAddToCartP
                     {/* Add to Cart Button */}
                     <Button
                         size="sm"
+                        onClick={handleAddToCart}
                         className="bg-[var(--secondary)] hover:bg-[var(--secondary)]/90 text-[var(--secondary-foreground)] font-bold rounded-full flex-shrink-0"
                     >
                         ADD TO CART

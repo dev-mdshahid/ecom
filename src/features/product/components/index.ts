@@ -5,3 +5,4 @@ export { AddToCartSection } from "./add-to-cart-section";
 export { ProductAccordions } from "./product-accordions";
 export { StickyAddToCart } from "./sticky-add-to-cart";
 export { ProductFeaturesSpotlight } from "./product-features-spotlight";
+export { ProductComparison } from "./product-comparison";

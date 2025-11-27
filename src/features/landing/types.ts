@@ -33,6 +33,22 @@ export type TProductReview = {
     date: string;
 };
 
+export type TComparisonFeature = {
+    label: string;
+    ourValue: string | boolean;
+    competitorValue: string | boolean;
+};
+
+export type TProductComparison = {
+    sectionTitle: string;
+    sectionSubtitle: string;
+    ourBrandName: string;
+    ourBrandImage?: string;
+    competitorName: string;
+    competitorImage?: string;
+    features: TComparisonFeature[];
+};
+
 export type TProduct = {
     id: string;
     name: string;
@@ -57,6 +73,7 @@ export type TProduct = {
     reviews: TProductReview[];
     paymentMethods: string[];
     trustBadges: { icon: string; text: string }[];
+    comparison?: TProductComparison;
 };
 
 export type TTestimonial = {

@@ -1,4 +1,4 @@
-import { TProduct, TTestimonial, TFeature, TFAQ, TStat, TSpotlightFeature } from "./types";
+import { TProduct, TTestimonial, TFeature, TFAQ, TStat } from "./types";
 
 export const products: TProduct[] = [
     {
@@ -129,6 +129,24 @@ export const products: TProduct[] = [
             { icon: "🚚", text: "Free Fast Shipping" },
             { icon: "↩️", text: "Free & Easy returns" },
         ],
+        comparison: {
+            sectionTitle: "Why Choose Relief Koala™",
+            sectionSubtitle: "More Comfort. More Features. More Value.",
+            ourBrandName: "Relief Koala™",
+            competitorName: "Other Brands",
+            features: [
+                { label: "Price", ourValue: "$39.99", competitorValue: "$60-$120" },
+                { label: "Breathing Simulation", ourValue: true, competitorValue: false },
+                { label: "Heartbeat Sounds", ourValue: true, competitorValue: "Some" },
+                { label: "White Noise", ourValue: true, competitorValue: true },
+                { label: "Soft Night Light", ourValue: true, competitorValue: false },
+                { label: "Battery Life", ourValue: "8 hours", competitorValue: "3-5 hours" },
+                { label: "USB-C Charging", ourValue: true, competitorValue: false },
+                { label: "Material", ourValue: "Premium Plush", competitorValue: "Standard" },
+                { label: "180° Adjustable", ourValue: true, competitorValue: false },
+                { label: "Money Back Guarantee", ourValue: "60 days", competitorValue: "30 days" },
+            ],
+        },
     },
     {
         id: "2",
@@ -204,6 +222,24 @@ export const products: TProduct[] = [
             { icon: "🚚", text: "Free Shipping" },
             { icon: "↩️", text: "Easy returns" },
         ],
+        comparison: {
+            sectionTitle: "Why Choose Our Nasal Aspirator",
+            sectionSubtitle: "Safer. Gentler. More Effective.",
+            ourBrandName: "BabyNest™",
+            competitorName: "Other Brands",
+            features: [
+                { label: "Price", ourValue: "$24.99", competitorValue: "$30-$50" },
+                { label: "Medical-Grade Suction", ourValue: true, competitorValue: "Some" },
+                { label: "Adjustable Power", ourValue: "3 Levels", competitorValue: "1-2 Levels" },
+                { label: "BPA-Free Materials", ourValue: true, competitorValue: true },
+                { label: "Silicone Tips Included", ourValue: "3 Tips", competitorValue: "1-2 Tips" },
+                { label: "Easy Clean Design", ourValue: true, competitorValue: false },
+                { label: "Quiet Operation", ourValue: true, competitorValue: false },
+                { label: "Pediatrician Approved", ourValue: true, competitorValue: "Some" },
+                { label: "Newborn Safe", ourValue: true, competitorValue: true },
+                { label: "Money Back Guarantee", ourValue: "30 days", competitorValue: "14 days" },
+            ],
+        },
     },
     {
         id: "3",
@@ -279,6 +315,24 @@ export const products: TProduct[] = [
             { icon: "🚚", text: "Free Shipping" },
             { icon: "↩️", text: "Easy returns" },
         ],
+        comparison: {
+            sectionTitle: "Why Choose Our Nail Grinder",
+            sectionSubtitle: "Safer. Quieter. Better for Baby.",
+            ourBrandName: "BabyNest™",
+            competitorName: "Other Brands",
+            features: [
+                { label: "Price", ourValue: "$29.99", competitorValue: "$35-$60" },
+                { label: "Grinding Pads", ourValue: "6 Included", competitorValue: "2-4 Pads" },
+                { label: "Built-in LED Light", ourValue: true, competitorValue: "Some" },
+                { label: "Whisper-Quiet Motor", ourValue: true, competitorValue: false },
+                { label: "USB Rechargeable", ourValue: true, competitorValue: false },
+                { label: "Age Range", ourValue: "0-12 months", competitorValue: "3+ months" },
+                { label: "Speed Settings", ourValue: "2 Speeds", competitorValue: "1 Speed" },
+                { label: "Safe Grinding Angle", ourValue: true, competitorValue: "Some" },
+                { label: "Compact & Portable", ourValue: true, competitorValue: true },
+                { label: "Money Back Guarantee", ourValue: "30 days", competitorValue: "14 days" },
+            ],
+        },
     },
 ];
 

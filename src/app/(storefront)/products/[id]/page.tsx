@@ -9,6 +9,7 @@ import {
     ProductAccordions,
     StickyAddToCart,
     ProductFeaturesSpotlight,
+    ProductComparison,
 } from "@/features/product/components";
 
 type TProductPageProps = {
@@ -102,6 +103,13 @@ export default async function ProductPage({ params }: TProductPageProps) {
                         productName={product.name}
                     />
                 </div>
+
+                {/* Product Comparison Section */}
+                {product.comparison && (
+                    <div className="bg-gradient-to-b from-[var(--background)] via-[var(--secondary)]/5 to-[var(--background)]">
+                        <ProductComparison comparison={product.comparison} />
+                    </div>
+                )}
 
                 <div className="container mx-auto px-4">
                     <div className="max-w-7xl mx-auto">

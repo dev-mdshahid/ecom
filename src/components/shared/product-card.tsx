@@ -12,23 +12,24 @@ type TProductCardProps = {
 
 export function ProductCard({ product, index = 0 }: TProductCardProps) {
     return (
-        <Card
-            className="group relative overflow-hidden bg-[var(--card)] border-[var(--border)] hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
-            style={{
-                animationDelay: `${index * 150}ms`,
-            }}
-        >
-            {/* Badge */}
-            {product.badge && (
-                <div className="absolute top-3 right-3 z-10">
-                    <Badge className="bg-[var(--primary)] text-white border-none px-2.5 py-0.5 text-xs">
-                        {product.badge}
-                    </Badge>
-                </div>
-            )}
+        <Link href={`/products/${product.id}`} className="block">
+            <Card
+                className="group relative overflow-hidden bg-[var(--card)] border-[var(--border)] hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                style={{
+                    animationDelay: `${index * 150}ms`,
+                }}
+            >
+                {/* Badge */}
+                {product.badge && (
+                    <div className="absolute top-3 right-3 z-10">
+                        <Badge className="bg-[var(--primary)] text-white border-none px-2.5 py-0.5 text-xs">
+                            {product.badge}
+                        </Badge>
+                    </div>
+                )}
 
-            {/* Product Image */}
-            <div className="relative h-40 md:h-48 bg-gradient-to-br from-[var(--muted)] to-[var(--background)] overflow-hidden">
+                {/* Product Image */}
+                <div className="relative h-40 md:h-48 bg-gradient-to-br from-[var(--muted)] to-[var(--background)] overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-[var(--secondary)] opacity-30 blur-2xl" />
                 </div>
@@ -77,14 +78,14 @@ export function ProductCard({ product, index = 0 }: TProductCardProps) {
                         </span>
                     </div>
                     <Button
-                        asChild
                         size="sm"
                         className="bg-[var(--primary)] hover:bg-[var(--primary)]/90 text-white rounded-full text-xs md:text-sm px-3 md:px-4"
                     >
-                        <Link href={`/products/${product.id}`}>View</Link>
+                        View
                     </Button>
                 </div>
             </CardContent>
         </Card>
+        </Link>
     );
 }

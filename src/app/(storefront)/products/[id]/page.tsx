@@ -105,16 +105,16 @@ export default async function ProductPage({ params }: TProductPageProps) {
                     />
                 </div>
 
-                {/* Trust Bar - Scrolling Banner */}
-                {product.trustBar && (
-                    <TrustBar trustBar={product.trustBar} />
-                )}
-
                 {/* Product Comparison Section */}
                 {product.comparison && (
                     <div className="bg-gradient-to-b from-[var(--background)] via-[var(--secondary)]/5 to-[var(--background)]">
                         <ProductComparison comparison={product.comparison} />
                     </div>
+                )}
+
+                {/* Trust Bar - Scrolling Banner */}
+                {product.trustBar && (
+                    <TrustBar trustBar={product.trustBar} />
                 )}
 
                 <div className="container mx-auto px-4">

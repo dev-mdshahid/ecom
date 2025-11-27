@@ -38,7 +38,7 @@ export function ProductFeaturesSpotlight({
     const rightFeatures = features.filter((_, i) => i % 2 === 1);
 
     return (
-        <section className="w-full py-12 md:py-16 lg:py-20 overflow-hidden">
+        <section className="w-full pt-12 md:pt-16 lg:pt-20 overflow-hidden">
             <div className="container mx-auto px-4">
                 {/* Section Header - Enhanced for Mobile */}
                 <div className="text-center mb-8 md:mb-14 animate-fade-in relative">

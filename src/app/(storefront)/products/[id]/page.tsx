@@ -8,6 +8,7 @@ import {
     AddToCartSection,
     ProductAccordions,
     StickyAddToCart,
+    ProductFeaturesSpotlight,
 } from "@/features/product/components";
 
 type TProductPageProps = {
@@ -91,7 +92,19 @@ export default async function ProductPage({ params }: TProductPageProps) {
                                 />
                             </div>
                         </div>
+                    </div>
+                </div>
 
+                {/* Product Features Spotlight - Full Width Section */}
+                <div className="bg-gradient-to-b from-[var(--background)] via-white to-[var(--background)]">
+                    <ProductFeaturesSpotlight
+                        features={product.spotlightFeatures}
+                        productName={product.name}
+                    />
+                </div>
+
+                <div className="container mx-auto px-4">
+                    <div className="max-w-7xl mx-auto">
                         {/* Bottom Spacing for sticky bar */}
                         <div className="h-20 lg:h-8"></div>
                     </div>

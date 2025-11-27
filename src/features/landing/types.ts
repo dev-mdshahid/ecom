@@ -16,6 +16,13 @@ export type TProductFeatureDetail = {
     description: string;
 };
 
+export type TSpotlightFeature = {
+    icon: string; // Lucide icon name (PascalCase, e.g., "RefreshCw", "Volume2")
+    title: string;
+    description: string;
+    highlight?: string;
+};
+
 export type TProductReview = {
     id: string;
     name: string;
@@ -44,6 +51,7 @@ export type TProduct = {
     shippingCountry: string;
     bundles: TProductBundle[];
     featureDetails: TProductFeatureDetail[];
+    spotlightFeatures: TSpotlightFeature[];
     howItWorks: string[];
     guaranteeInfo: string[];
     reviews: TProductReview[];

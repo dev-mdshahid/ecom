@@ -1,4 +1,4 @@
-import { TProduct, TTestimonial, TFeature, TFAQ, TStat } from "./types";
+import { TProduct, TTestimonial, TFeature, TFAQ, TStat, TSpotlightFeature } from "./types";
 
 export const products: TProduct[] = [
     {
@@ -76,6 +76,30 @@ export const products: TProduct[] = [
                 description: "50% Off Sitewide + FREE Shipping",
             },
         ],
+        spotlightFeatures: [
+            {
+                icon: "RefreshCw",
+                title: "180° Adjustable Pivot",
+                description: "Tilt and position the Koala forwards or backwards for the perfect cuddling angle and comfort.",
+                highlight: "Ergonomic Design",
+            },
+            {
+                icon: "Volume2",
+                title: "Soothing Sound System",
+                description: "Built-in speaker plays calming heartbeat sounds and white noise to help you drift off peacefully.",
+            },
+            {
+                icon: "BatteryCharging",
+                title: "Long-Lasting Battery",
+                description: "Up to 8 hours of continuous use on a single charge, with convenient USB-C fast charging.",
+                highlight: "All-Night Comfort",
+            },
+            {
+                icon: "Mic",
+                title: "Breathing Sensor",
+                description: "Advanced sensor mimics natural breathing patterns, syncing with your body for deeper relaxation.",
+            },
+        ],
         howItWorks: [
             "Reduces tension. The Relief Koala helps you relax and feel better, like a big, warm hug. Its soft, cuddly body and soothing breathing motion will make your tension melt away.",
             "Instant calmness. Its comforting presence and soft, huggable body will give you the emotional support you need.",
@@ -144,6 +168,30 @@ export const products: TProduct[] = [
                 description: "Hospital-grade suction power that's gentle on baby",
             },
         ],
+        spotlightFeatures: [
+            {
+                icon: "Shield",
+                title: "Medical-Grade Safety",
+                description: "BPA-free silicone tips designed by pediatricians for the safest suction experience.",
+                highlight: "Doctor Approved",
+            },
+            {
+                icon: "Wind",
+                title: "Adjustable Suction Power",
+                description: "Three suction levels let you customize the strength for gentle and effective congestion relief.",
+            },
+            {
+                icon: "Droplets",
+                title: "Easy Clean Design",
+                description: "Fully disassembles for thorough cleaning and sanitizing after each use.",
+                highlight: "Hygienic",
+            },
+            {
+                icon: "Baby",
+                title: "Newborn Safe",
+                description: "Specially designed soft tips for delicate newborn nostrils, safe from day one.",
+            },
+        ],
         howItWorks: [
             "Place soft tip at nostril entrance",
             "Gently suction to clear congestion",
@@ -193,6 +241,30 @@ export const products: TProduct[] = [
                 icon: "💡",
                 title: "Built-in LED light",
                 description: "See clearly even in low light conditions",
+            },
+        ],
+        spotlightFeatures: [
+            {
+                icon: "Lightbulb",
+                title: "Built-in LED Light",
+                description: "Illuminate tiny nails perfectly even in low light, making nighttime nail care a breeze.",
+                highlight: "See Clearly",
+            },
+            {
+                icon: "Volume",
+                title: "Whisper-Quiet Motor",
+                description: "Ultra-quiet operation won't disturb sleeping babies—trim nails while they snooze peacefully.",
+            },
+            {
+                icon: "Settings",
+                title: "6 Grinding Pads",
+                description: "Age-appropriate pads for newborns to toddlers, ensuring the perfect gentle file every time.",
+                highlight: "All Ages",
+            },
+            {
+                icon: "Zap",
+                title: "USB Rechargeable",
+                description: "Convenient USB charging means no batteries needed—always ready when you need it.",
             },
         ],
         howItWorks: [

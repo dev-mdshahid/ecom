@@ -31,8 +31,8 @@ src/
     cart/
       components/       # Components specific to Cart
       hooks/            # Hooks specific to Cart
-      actions.ts        # Server Actions for Cart
-      types.ts          # Types specific to Cart
+      cart.actions.ts   # Server Actions for Cart
+      cart.types.ts     # Types specific to Cart
     products/
     admin-orders/
   lib/                  # Singleton utilities (db, stripe, utils)

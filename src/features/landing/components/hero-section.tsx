@@ -46,7 +46,7 @@ export function HeroSection() {
                             size="lg"
                             className="bg-[var(--primary)] hover:bg-[var(--primary)]/90 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                         >
-                            <Link href="#products">
+                            <Link href="/products">
                                 Shop Now
                                 <ArrowRight className="ml-2 w-5 h-5" />
                             </Link>

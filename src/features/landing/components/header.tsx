@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Menu, Home, Package, Info, Mail, Sparkles } from "lucide-react";
 import { useState } from "react";
+import { useCart } from "@/features/cart/store";
+import { CartDrawer } from "@/features/cart/components/cart-drawer";
 import {
     Sheet,
     SheetContent,
@@ -13,6 +15,28 @@ import {
     SheetDescription,
 } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
+
+function CartButton() {
+    const { openDrawer, totalItems } = useCart();
+    const itemCount = totalItems();
+
+    return (
+        <Button
+            variant="ghost"
+            size="icon"
+            className="relative hover:bg-[var(--muted)]"
+            onClick={openDrawer}
+        >
+            <ShoppingCart className="w-5 h-5" />
+            {itemCount > 0 && (
+                <span className="absolute -top-1 -right-1 w-5 h-5 bg-[var(--primary)] text-white text-xs font-bold rounded-full flex items-center justify-center">
+                    {itemCount > 9 ? "9+" : itemCount}
+                </span>
+            )}
+            <span className="sr-only">Shopping Cart</span>
+        </Button>
+    );
+}
 
 export function Header() {
     const [isOpen, setIsOpen] = useState(false);
@@ -54,17 +78,8 @@ export function Header() {
 
                     {/* Right Side Actions */}
                     <div className="flex items-center space-x-4">
-                        <Button
-                            asChild
-                            variant="ghost"
-                            size="icon"
-                            className="relative hover:bg-[var(--muted)]"
-                        >
-                            <Link href="/cart">
-                                <ShoppingCart className="w-5 h-5" />
-                                <span className="sr-only">Shopping Cart</span>
-                            </Link>
-                        </Button>
+                        <CartButton />
+                        <CartDrawer />
 
                         {/* Mobile Menu */}
                         <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -120,20 +135,9 @@ export function Header() {
 
                                 {/* Footer Section */}
                                 <div className="border-t border-[var(--border)] p-6 bg-[var(--muted)]/30">
-                                    <div className="space-y-3">
-                                        <Button
-                                            asChild
-                                            className="w-full bg-[var(--primary)] hover:bg-[var(--primary)]/90 text-white"
-                                        >
-                                            <Link href="/cart">
-                                                <ShoppingCart className="w-4 h-4 mr-2" />
-                                                View Cart
-                                            </Link>
-                                        </Button>
-                                        <p className="text-xs text-center text-[var(--muted-foreground)]">
-                                            Trusted by thousands of parents
-                                        </p>
-                                    </div>
+                                    <p className="text-xs text-center text-[var(--muted-foreground)]">
+                                        Trusted by thousands of parents
+                                    </p>
                                 </div>
                             </SheetContent>
                         </Sheet>

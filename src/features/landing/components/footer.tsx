@@ -19,10 +19,10 @@ export function Footer() {
             { name: "Blog", href: "/blog" },
         ],
         support: [
-            { name: "Shipping Policy", href: "/policies/shipping" },
-            { name: "Return Policy", href: "/policies/returns" },
-            { name: "Privacy Policy", href: "/policies/privacy" },
-            { name: "Terms of Service", href: "/policies/terms" },
+            { name: "Shipping & Delivery", href: "/shipping" },
+            { name: "Return & Refund", href: "/return-policy" },
+            { name: "Privacy Policy", href: "/privacy-policy" },
+            { name: "Terms of Service", href: "/terms-of-service" },
         ],
     };
 
